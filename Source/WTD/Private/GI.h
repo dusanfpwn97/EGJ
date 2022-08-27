@@ -29,6 +29,8 @@ struct FUnitInfo : public FTableRowBase
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		bool IsFriendly = false;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		bool IsUndead = false;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		float HP = 100.f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		float Speed = 280.f;
