@@ -26,7 +26,9 @@ USTRUCT(BlueprintType)
 struct FUnitInfo : public FTableRowBase
 {
 	GENERATED_BODY()
-		UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		bool IsFriendly = false;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		float HP = 100.f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		float Speed = 280.f;
@@ -47,6 +49,9 @@ struct FUnitInfo : public FTableRowBase
 		class UAnimMontage* AttackMontage;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 		class UAnimSequence* RunAnimation;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		class UAnimMontage* DeathMontage;
+
 	
 };
 
