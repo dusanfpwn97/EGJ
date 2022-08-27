@@ -42,12 +42,7 @@ struct FUnitInfo : public FTableRowBase
 		float Damage = 10.f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		int32 BaseGoldCost = 10;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-		class UAnimMontage* AttackMontage;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-		class UAnimMontage* DeathMontage;
 
-	
 };
 
 
