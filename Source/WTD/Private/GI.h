@@ -37,18 +37,13 @@ struct FUnitInfo : public FTableRowBase
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		float AtkSpeed = 0.5f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		float AtkRange = 50.f;
+		float AtkRange = 120.f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		float Damage = 10.f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-		class USkeletalMesh* FriendlySK;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-		class USkeletalMesh* EnemySK;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		int32 BaseGoldCost = 10;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 		class UAnimMontage* AttackMontage;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-		class UAnimSequence* RunAnimation;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 		class UAnimMontage* DeathMontage;
 
