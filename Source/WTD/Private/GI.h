@@ -15,36 +15,39 @@
 
 /*
 UENUM(BlueprintType)
-enum class E : uint8
+enum class EUnitState : uint8
 {
 	NONE,
-	STARTING,
-	HITTING,
-	ENDING
+	MOVING,
+	COMBAT
 };*/
 
 USTRUCT(BlueprintType)
 struct FUnitInfo : public FTableRowBase
 {
 	GENERATED_BODY()
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	float HP = 100.f;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	float Speed = 280.f;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	float HPRegen = 0.f;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		float HP = 100.f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		float Speed = 280.f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		float HPRegen = 0.f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		float AtkSpeed = 0.5f;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		float AtkRange = 50.f;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		float Damage = 10.f;
+
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 		class USkeletalMesh* FriendlySK;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 		class USkeletalMesh* EnemySK;
-
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		class UAnimMontage* AttackMontage;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		class UAnimSequence* RunAnimation;
+	
 };
 
 
