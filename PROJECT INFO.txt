@@ -1,11 +1,12 @@
 Team Members:
 Dusan Fajler (dusanfajler@gmail.com)
 Marko Fajler (ultipowah@gmail.com)
-Stefan Stanojevic
+Stefan Stanojevic (edwinpickett1@gmail.com)
 
 
 Sourced assets from Unreal Engine Marketplace: 
 - All 3D assets, Materials and Particles
+
 Asset Packs used:
 POLYGON - Dungeon Pack (https://www.unrealengine.com/marketplace/en-US/product/polygon-dungeon-pack)
 POLYGON - Knights Pack (https://www.unrealengine.com/marketplace/en-US/product/polygon-knights-pack)
@@ -19,4 +20,5 @@ Original assets:
 All Sounds
 All Code (Blueprints and C++)
 Game World (Level) Design (composed with sourced assets)
+All User Interface
 
