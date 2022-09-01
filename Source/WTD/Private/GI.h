@@ -13,17 +13,21 @@
  */
 
 
-/*
+
 UENUM(BlueprintType)
-enum class EUnitState : uint8
+enum class EUpgradeType : uint8
 {
 	NONE,
-	MOVING,
-	COMBAT
-};*/
+	DAMAGE,
+	ATTACK_SPEED,
+	HP,
+	HP_REGEN,
+	RANGE,
+	MULTISHOT
+};
 
 USTRUCT(BlueprintType)
-struct FUnitInfo : public FTableRowBase
+struct FUnitInfo
 {
 	GENERATED_BODY()
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -44,6 +48,54 @@ struct FUnitInfo : public FTableRowBase
 		float Damage = 10.f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		int32 BaseGoldCost = 10;
+
+};
+
+
+
+USTRUCT(BlueprintType)
+struct FIndividualUpgrade
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		FString ShortName;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		EUpgradeType UpgradeType;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		float Value;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		TArray<int32> AvailableLevels;
+
+};
+
+USTRUCT(BlueprintType)
+struct FUpgradesByLevel
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TArray<FIndividualUpgrade> Upgrades;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 Cost;
+};
+
+
+USTRUCT(BlueprintType)
+struct FUpgrade
+{
+	GENERATED_BODY()
+
+		UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		FString Name;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		FString Description;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		TArray<FUpgradesByLevel> UpgradesByLevel;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		class UTexture2D* SmallIcon;
 
 };
 
